@@ -67,6 +67,10 @@ executable Stella
     build-depends:    base ^>=4.16.4.0,
                       req,
                       optparse-applicative >= 0.18.1.0,
+                      aeson,
+                      text,
+                      bytestring,
+                      modern-uri,
 
     -- Directories containing source files.
     hs-source-dirs:   app

@@ -1,5 +1,7 @@
-import Options.Applicative
 
+--Module Main (main) where
+
+import Options.Applicative
 data TickerInfo = TickerInfo 
    { tickerSymbol     :: !String}
 

@@ -10,6 +10,16 @@
   (major1) == 0 && (major2) <  1 || \
   (major1) == 0 && (major2) == 1 && (minor) <= 0)
 #endif /* MIN_VERSION_Stella */
+/* package aeson-2.2.1.0 */
+#ifndef VERSION_aeson
+#define VERSION_aeson "2.2.1.0"
+#endif /* VERSION_aeson */
+#ifndef MIN_VERSION_aeson
+#define MIN_VERSION_aeson(major1,major2,minor) (\
+  (major1) <  2 || \
+  (major1) == 2 && (major2) <  2 || \
+  (major1) == 2 && (major2) == 2 && (minor) <= 1)
+#endif /* MIN_VERSION_aeson */
 /* package base-4.16.4.0 */
 #ifndef VERSION_base
 #define VERSION_base "4.16.4.0"
@@ -20,6 +30,26 @@
   (major1) == 4 && (major2) <  16 || \
   (major1) == 4 && (major2) == 16 && (minor) <= 4)
 #endif /* MIN_VERSION_base */
+/* package bytestring-0.11.4.0 */
+#ifndef VERSION_bytestring
+#define VERSION_bytestring "0.11.4.0"
+#endif /* VERSION_bytestring */
+#ifndef MIN_VERSION_bytestring
+#define MIN_VERSION_bytestring(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  11 || \
+  (major1) == 0 && (major2) == 11 && (minor) <= 4)
+#endif /* MIN_VERSION_bytestring */
+/* package modern-uri-0.3.6.1 */
+#ifndef VERSION_modern_uri
+#define VERSION_modern_uri "0.3.6.1"
+#endif /* VERSION_modern_uri */
+#ifndef MIN_VERSION_modern_uri
+#define MIN_VERSION_modern_uri(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  3 || \
+  (major1) == 0 && (major2) == 3 && (minor) <= 6)
+#endif /* MIN_VERSION_modern_uri */
 /* package optparse-applicative-0.18.1.0 */
 #ifndef VERSION_optparse_applicative
 #define VERSION_optparse_applicative "0.18.1.0"
@@ -40,6 +70,16 @@
   (major1) == 3 && (major2) <  13 || \
   (major1) == 3 && (major2) == 13 && (minor) <= 0)
 #endif /* MIN_VERSION_req */
+/* package text-1.2.5.0 */
+#ifndef VERSION_text
+#define VERSION_text "1.2.5.0"
+#endif /* VERSION_text */
+#ifndef MIN_VERSION_text
+#define MIN_VERSION_text(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 5)
+#endif /* MIN_VERSION_text */
 
 /* tool gcc-13.2.1 */
 #ifndef TOOL_VERSION_gcc

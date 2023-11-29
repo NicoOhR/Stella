@@ -20,6 +20,16 @@
   (major1) == 2 && (major2) <  2 || \
   (major1) == 2 && (major2) == 2 && (minor) <= 1)
 #endif /* MIN_VERSION_aeson */
+/* package aeson-pretty-0.8.10 */
+#ifndef VERSION_aeson_pretty
+#define VERSION_aeson_pretty "0.8.10"
+#endif /* VERSION_aeson_pretty */
+#ifndef MIN_VERSION_aeson_pretty
+#define MIN_VERSION_aeson_pretty(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  8 || \
+  (major1) == 0 && (major2) == 8 && (minor) <= 10)
+#endif /* MIN_VERSION_aeson_pretty */
 /* package base-4.16.4.0 */
 #ifndef VERSION_base
 #define VERSION_base "4.16.4.0"

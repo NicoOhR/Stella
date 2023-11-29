@@ -1,9 +1,12 @@
 
---Module Main (main) where
+module Main (main) where 
 
 import Options.Applicative
+import Alpha (alpha)
+import Data.Text (Text)
+
 data TickerInfo = TickerInfo 
-   { tickerSymbol     :: !String}
+   { tickerSymbol     :: String}
 
 ticker :: Parser TickerInfo
 
@@ -26,7 +29,7 @@ main = getInfo =<< execParser opts
 
 getInfo :: TickerInfo -> IO()
 
-getInfo (TickerInfo h) = putStrLn $ h
+getInfo (TickerInfo h) = alpha h
 getInfo _ = return () 
 
 

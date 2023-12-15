@@ -76,7 +76,8 @@ executable stella
     -- Directories containing source files.
     hs-source-dirs:   app
 
-    other-modules:    Alpha
+    other-modules:    Alpha,
+                      Graph
 
     -- Base language which the package is written in.
     default-language: Haskell2010

@@ -1,9 +1,12 @@
 {-# LANGUAGE DeriveGeneric #-}
-
+{-# LANGUAGE OverloadedStrings #-}
 module Graph where 
 
 import Data.Aeson
+import Control.Applicative
 import GHC.Generics
+import qualified Data.ByteString.Lazy.Char8 as B
+
 
 data Entry = 
   Entry { open  :: !Double
@@ -11,9 +14,13 @@ data Entry =
         , low   :: !Double
         , close :: !Double
         , volume:: !Double
-        } deriving (Show,Generic)
+        } deriving Show
 
-instance FromJSON Entry
-
+instance FromJSON Entry where 
+      parseJSON = withObject "Entry" $ \v -> Entry <$> v .: "1. open" 
+        <*> v .: "2. high" 
+        <*> v .: "3. low" 
+        <*> v .: "4. close" 
+        <*> v .: "5. volume"
 
 

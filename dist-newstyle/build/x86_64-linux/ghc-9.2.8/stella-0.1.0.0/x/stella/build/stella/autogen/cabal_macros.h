@@ -50,6 +50,16 @@
   (major1) == 0 && (major2) <  11 || \
   (major1) == 0 && (major2) == 11 && (minor) <= 4)
 #endif /* MIN_VERSION_bytestring */
+/* package http-conduit-2.3.8.3 */
+#ifndef VERSION_http_conduit
+#define VERSION_http_conduit "2.3.8.3"
+#endif /* VERSION_http_conduit */
+#ifndef MIN_VERSION_http_conduit
+#define MIN_VERSION_http_conduit(major1,major2,minor) (\
+  (major1) <  2 || \
+  (major1) == 2 && (major2) <  3 || \
+  (major1) == 2 && (major2) == 3 && (minor) <= 8)
+#endif /* MIN_VERSION_http_conduit */
 /* package modern-uri-0.3.6.1 */
 #ifndef VERSION_modern_uri
 #define VERSION_modern_uri "0.3.6.1"

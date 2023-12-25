@@ -3,7 +3,11 @@ module Main (main) where
 
 import Options.Applicative
 import Alpha (alpha)
+import Graph (Entry)
 import Data.Text (Text)
+import Data.Aeson (decode)
+import qualified Data.ByteString.Lazy.Char8 as BL
+
 
 data TickerInfo = TickerInfo 
    { tickerSymbol     :: String}
@@ -19,7 +23,7 @@ ticker = TickerInfo
           )
 
 main :: IO ()
-main = getInfo =<< execParser opts
+main = printInfo =<< execParser opts
   where 
     opts = info (ticker <**> helper)
       ( fullDesc
@@ -27,12 +31,18 @@ main = getInfo =<< execParser opts
      <> header "stella - data fetcher"
       )
 
-getInfo :: TickerInfo -> IO()
+printInfo :: TickerInfo -> IO ()
+printInfo (TickerInfo h) = do 
+        maybeEntry <- alpha h 
+        case maybeEntry of 
+            Just entry -> print entry 
+            Nothing -> putStrLn "No entry"
+--getInfo :: TickerInfo -> IO BL.ByteString
 
-getInfo (TickerInfo h) = alpha h
-getInfo _ = return () 
+--getInfo (TickerInfo h) = alpha h
+--getInfo _ = return () 
 
+--formatInfo :: TickerInfo -> IO ()
 
---MVPs: 
---FinAPI implementation
---Module organization
+--formatInfo (TickerInfo h) = BL.putStrLn (alpha h)
+--formatInfo _ = return ()

@@ -23,4 +23,4 @@ instance FromJSON Entry where
         <*> v .: "4. close" 
         <*> v .: "5. volume"
 
-
+--TODO: map over json input and save to list, use list to generate graphs

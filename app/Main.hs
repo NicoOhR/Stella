@@ -35,14 +35,5 @@ printInfo :: TickerInfo -> IO ()
 printInfo (TickerInfo h) = do 
         maybeEntry <- alpha h 
         case maybeEntry of 
-            Just entry -> print entry 
+            Just entry -> print entry
             Nothing -> putStrLn "No entry"
---getInfo :: TickerInfo -> IO BL.ByteString
-
---getInfo (TickerInfo h) = alpha h
---getInfo _ = return () 
-
---formatInfo :: TickerInfo -> IO ()
-
---formatInfo (TickerInfo h) = BL.putStrLn (alpha h)
---formatInfo _ = return ()

@@ -26,4 +26,5 @@ alpha t = runReq defaultHttpConfig $ do
                   <> "symbol" =: t 
                   <> "apikey" =: ("AEZLT4ZC9SZ9MUK1" :: Text)
    r <- req GET url NoReqBody lbsResponse queryParam
-   return $ decode ( responseBody r)
+   liftIO $ BL.putStrLn (responseBody r) 
+   return $ decode (responseBody r) 

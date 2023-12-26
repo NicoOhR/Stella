@@ -36,4 +36,4 @@ printInfo (TickerInfo h) = do
         maybeEntry <- alpha h 
         case maybeEntry of 
             Just entry -> print entry
-            Nothing -> putStrLn "No entry"
+            Nothing -> putStrLn "No Entry"

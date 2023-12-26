@@ -71,6 +71,7 @@ executable stella
                       aeson-pretty,
                       text,
                       http-conduit,
+                      containers,
                       bytestring,
                       modern-uri,
 

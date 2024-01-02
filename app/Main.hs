@@ -3,7 +3,8 @@ module Main (main) where
 
 import Options.Applicative
 import Alpha (alpha)
-import Graph (Entry)
+import Graph
+import Data.Map as Map
 import Data.Text (Text)
 import Data.Aeson (decode)
 import qualified Data.ByteString.Lazy.Char8 as BL
@@ -23,7 +24,7 @@ ticker = TickerInfo
           )
 
 main :: IO ()
-main = printInfo =<< execParser opts
+main = processData =<< execParser opts
   where 
     opts = info (ticker <**> helper)
       ( fullDesc
@@ -37,3 +38,16 @@ printInfo (TickerInfo h) = do
         case maybeEntry of 
             Just entry -> print entry
             Nothing -> putStrLn "No Entry"
+
+
+getEntrysLists :: (Map.Map Text Entry) -> ([Text],[Entry])
+getEntrysLists stockMap = unzip (Map.toList stockMap)
+
+processData :: TickerInfo -> IO ()
+processData (TickerInfo h) = do 
+          maybeEntry <- alpha h 
+          case maybeEntry of 
+              Just entry -> do 
+                  let result = getEntrysLists (monthlyTimeSeries entry)
+                  print result
+              Nothing -> putStrLn "No Entry"

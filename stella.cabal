@@ -74,12 +74,15 @@ executable stella
                       containers,
                       bytestring,
                       modern-uri,
+                      easyplot
+
 
     -- Directories containing source files.
     hs-source-dirs:   app
 
     other-modules:    Alpha,
-                      Graph
+                      Graph,
+                      Plot
 
     -- Base language which the package is written in.
     default-language: Haskell2010

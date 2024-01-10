@@ -60,6 +60,16 @@
   (major1) == 0 && (major2) <  6 || \
   (major1) == 0 && (major2) == 6 && (minor) <= 5)
 #endif /* MIN_VERSION_containers */
+/* package easyplot-1.0 */
+#ifndef VERSION_easyplot
+#define VERSION_easyplot "1.0"
+#endif /* VERSION_easyplot */
+#ifndef MIN_VERSION_easyplot
+#define MIN_VERSION_easyplot(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  0 || \
+  (major1) == 1 && (major2) == 0 && (minor) <= 0)
+#endif /* MIN_VERSION_easyplot */
 /* package http-conduit-2.3.8.3 */
 #ifndef VERSION_http_conduit
 #define VERSION_http_conduit "2.3.8.3"

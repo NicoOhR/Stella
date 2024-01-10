@@ -45,15 +45,18 @@ printInfo (TickerInfo h) = do
 getEntrysLists :: (Map.Map Text Entry) -> ([Text],[Entry])
 getEntrysLists stockMap = unzip (Map.toList stockMap)
 
-getClosedPrices :: ([Text], [Entry]) -> ([Text],[Double])
+getClosedPrices :: ([Text], [Entry]) -> ([Text] , [Double])
 getClosedPrices (times,entries) = (times, Prelude.map read (Prelude.map T.unpack (Prelude.map close entries)))
+
+getClosedTuples :: ([Text],[Double]) -> [(Text,Double)]
+getClosedTuples (times,closes) = zip times closes 
 
 processData :: TickerInfo -> IO ()
 processData (TickerInfo h) = do 
           maybeEntry <- alpha h 
           case maybeEntry of 
               Just entry -> do 
-                  let result = getClosedPrices (getEntrysLists (monthlyTimeSeries entry))
+                  let result = getClosedTuples (getClosedPrices (getEntrysLists (monthlyTimeSeries entry)))
                   print result
               Nothing -> putStrLn "No Entry"
 
